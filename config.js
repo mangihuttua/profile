@@ -1,11 +1,11 @@
     //  Button navigation 
 
-        const menuBtn = document.getElementById("menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const overlay = document.getElementById("overlay");
+        let menuBtn = document.getElementById("menu-btn");
+        let mobileMenu = document.getElementById("mobile-menu");
+        let overlay = document.getElementById("overlay");
 
-        const openIcon = document.getElementById("open-icon");
-        const closeIcon = document.getElementById("close-icon");
+        let openIcon = document.getElementById("open-icon");
+        let closeIcon = document.getElementById("close-icon");
 
         function toggleMenu() {
 
@@ -42,12 +42,12 @@
 
     //photoFloat animation
 
-        const photo = document.querySelector("#about-photo");
+        let photo = document.querySelector("#about-photo");
 
-        const photoObserver = new IntersectionObserver((entries)=>{
+        let photoObserver = new IntersectionObserver((entries)=>{
             entries.forEach(entry=>{
 
-           const currentScroll = window.scrollY;
+           let currentScroll = window.scrollY;
                 if(entry.isIntersecting && currentScroll > lastScroll)
                     {
                      photo.classList.add("show");
@@ -72,8 +72,8 @@
 
         emailjs.init("0MliWVPTf2anzTexu");
 
-        const form = document.getElementById("contact-form");
-        const button = document.getElementById("sendBtn");
+        let form = document.getElementById("contact-form");
+        let button = document.getElementById("sendBtn");
 
         form.addEventListener("submit", function (e) {
 
@@ -92,7 +92,7 @@
 
             ).then(function () {
 
-                alert("Message sent successfully!");
+                alert("Pesan Anda berhasil di kirim!");
 
                 form.reset();
 
