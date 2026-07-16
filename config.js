@@ -44,29 +44,35 @@
 
         let photo = document.querySelector("#about-photo");
 
-        let photoObserver = new IntersectionObserver((entries)=>{
-            entries.forEach(entry=>{
+            if (photo) {
 
-           let currentScroll = window.scrollY;
-                if(entry.isIntersecting && currentScroll > lastScroll)
-                    {
-                     photo.classList.add("show");
-                    }
+                let lastScroll = 0;
 
-                    if(!entry.isIntersecting)
-                    {
-                        photo.classList.remove("show");
-                    }
+                let photoObserver = new IntersectionObserver((entries)=>{
 
-                lastScroll = currentScroll;
+                    entries.forEach(entry=>{
 
+                        let currentScroll = window.scrollY;
+
+                        if(entry.isIntersecting && currentScroll > lastScroll){
+                            photo.classList.add("show");
+                        }
+
+                        if(!entry.isIntersecting){
+                            photo.classList.remove("show");
+                        }
+
+                        lastScroll = currentScroll;
+
+                    });
+
+                }, {
+                    threshold: 0.3,
+                    rootMargin: "0px 0px -100px 0px"
                 });
 
-            },{
-                threshold:0.3,
-                rootMargin:"0px 0px -100px 0px"
-                });
                 photoObserver.observe(photo);
+            }
   
     //email 
 
