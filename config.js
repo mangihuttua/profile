@@ -42,7 +42,7 @@
 
     //photoFloat animation
 
-        cons tphoto = document.querySelector("#about-photo");
+        const tphoto = document.querySelector("#about-photo");
 
             if (photo) {
 
